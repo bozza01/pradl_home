@@ -3,70 +3,130 @@ const title = "Pradl – Offizielle Website";
 const description = "Willkommen auf der Website der Familie Pradl.";
 ---
 
-<!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta name="description" content="Offizielle Website von Pradl." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta property="og:title" content="Pradl" />
-    <meta property="og:description" content="..." />
-    <meta property="og:image" content="/social-preview.jpg" />   
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>{title}</title> 
-    <style>
-      :root {
-        --primary: #1e293b;
-        --accent: #2563eb;
-        --bg: #f8fafc;
-      }
-
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: var(--bg);
-        color: var(--primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
-
-      a {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: var(--accent);
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: 0.2s ease;
-      }
-
-      a:hover {
-        opacity: 0.85;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="Ein kleiner digitaler Ort über Familie, Interessen und Projekte." />
   </head>
+
   <body>
     <main>
-      <h1>Willkommen 👋</h1>
-      <p>Das ist die Website der Familie Pradl.</p>
-      <a href="mailto:familie-pradl@t-online.de">Kontakt aufnehmen</a>
+      <section class="hero">
+        <div class="overlay">
+          <h1>Willkommen</h1>
+          <p>Ein kleiner digitaler Ort über Familie, Interessen und Projekte.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <p>
+          Diese Seite wächst Schritt für Schritt.  
+          Hier sammeln wir Eindrücke aus unserem Alltag, Reisen, Technikprojekten
+          und den kleinen Dingen, die uns begeistern.
+        </p>
+
+        <div class="preview">
+          <div>
+            <h3>🌍 Unterwegs</h3>
+            <p>Orte, die uns inspirieren.</p>
+          </div>
+          <div>
+            <h3>🛠 Projekte</h3>
+            <p>Technik, Ideen und Experimente.</p>
+          </div>
+          <div>
+            <h3>👨‍👩‍👧 Familie</h3>
+            <p>Traditionen und gemeinsame Interessen.</p>
+          </div>
+        </div>
+
+        <p class="soon">Mehr Inhalte folgen in Kürze.</p>
+      </section>
+
+      <footer>
+        © {new Date().getFullYear()} Boris Pradl
+      </footer>
     </main>
   </body>
-</html>	
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  .hero {
+    height: 80vh;
+    background-image: url("/hero.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    background: rgba(0,0,0,0.35);
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  h1 {
+    margin: 0 0 0.5rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .overlay p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .preview {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .preview h3 {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .soon {
+    margin-top: 3rem;
+    font-style: italic;
+    color: #666;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 700px) {
+    .preview {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
