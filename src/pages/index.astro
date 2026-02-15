@@ -8,17 +8,19 @@ const description = "Willkommen auf der Website der Familie Pradl.";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content="Ein kleiner digitaler Ort über Familie, Interessen und Projekte." />
+    <meta name="description" content={description} />
   </head>
 
   <body>
-    <main>
-      <section class="hero">
+    <a href="#content" class="skip-link">Zum Inhalt springen</a>
+
+    <main id="content">
+      <header class="hero">
         <div class="overlay">
           <h1>Willkommen</h1>
           <p>Ein kleiner digitaler Ort über Familie, Interessen und Projekte.</p>
         </div>
-      </section>
+      </header>
 
       <section class="content">
         <p>
@@ -29,15 +31,15 @@ const description = "Willkommen auf der Website der Familie Pradl.";
 
         <div class="preview">
           <div>
-            <h3>🌍 Unterwegs</h3>
+            <h2>🌍 Unterwegs</h2>
             <p>Orte, die uns inspirieren.</p>
           </div>
           <div>
-            <h3>🛠 Projekte</h3>
+            <h2>🛠 Projekte</h2>
             <p>Technik, Ideen und Experimente.</p>
           </div>
           <div>
-            <h3>👨‍👩‍👧 Familie</h3>
+            <h2>👨‍👩‍👧 Familie</h2>
             <p>Traditionen und gemeinsame Interessen.</p>
           </div>
         </div>
@@ -73,7 +75,7 @@ const description = "Willkommen auf der Website der Familie Pradl.";
   }
 
   .overlay {
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.45);
     color: white;
     padding: 2rem 3rem;
     border-radius: 12px;
@@ -86,6 +88,18 @@ const description = "Willkommen auf der Website der Familie Pradl.";
     font-size: 3rem;
     font-weight: 500;
   }
+
+ .skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+  .skip-link:focus {
+    left: 20px;
+    top: 20px;
+    background: white;
+    padding: 10px;
+  } 
 
   .overlay p {
     margin: 0;
@@ -106,7 +120,7 @@ const description = "Willkommen auf der Website der Familie Pradl.";
     margin: 3rem 0;
   }
 
-  .preview h3 {
+  .preview h2 {
     margin-bottom: 0.3rem;
     font-weight: 500;
   }
@@ -120,7 +134,7 @@ const description = "Willkommen auf der Website der Familie Pradl.";
   footer {
     text-align: center;
     padding: 2rem 0 3rem;
-    color: #888;
+    color: #444;
     font-size: 0.9rem;
   }
 
@@ -129,4 +143,9 @@ const description = "Willkommen auf der Website der Familie Pradl.";
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+:focus-visible {
+  outline: 3px solid #666;
+  outline-offset: 3px;
+}  
 </style>
