@@ -1,17 +1,22 @@
 ---
-const title = "Pradl Home";
+const title = "Pradl – Offizielle Website";
 const description = "Willkommen auf der Website der Familie Pradl.";
 ---
 
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="description" content="Offizielle Website von Pradl." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:title" content="Pradl" />
+    <meta property="og:description" content="..." />
+    <meta property="og:image" content="/social-preview.jpg" />   
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>{title}</title> 
     <style>
       :root {
         --primary: #1e293b;
