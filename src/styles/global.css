@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 20px;
+  top: 20px;
+  background: white;
+  padding: 10px;
+}
+
+.content {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: #444;
+  font-size: 0.9rem;
+}

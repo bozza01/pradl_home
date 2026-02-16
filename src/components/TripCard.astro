@@ -1,0 +1,26 @@
+---
+const { title, image, href } = Astro.props;
+---
+
+<a class="card" href={href}>
+  <img src={image} alt={title} />
+  <span>{title}</span>
+</a>
+
+<style>
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: .5rem;
+}
+
+.card span {
+  font-weight: 500;
+}
+</style>
