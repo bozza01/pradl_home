@@ -1,27 +1,173 @@
 ---
-const { images } = Astro.props;
+const { images = [] } = Astro.props;
 ---
 
-<div class="carousel">
-  {images.map((src) => (
-    <img src={src} loading="lazy" />
-  ))}
+<div class="carousel" data-carousel>
+  <div class="track">
+    {images.map((src, i) => (
+      <div class="slide">
+        <img src={src} alt={`Bild ${i + 1}`} loading="lazy" />
+      </div>
+    ))}
+  </div>
+
+  <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+  <button class="nav next" aria-label="Nächstes Bild">›</button>
+
+  <div class="counter">
+    <span data-current>1</span> / {images.length}
+  </div>
 </div>
+
+<div class="lightbox" data-lightbox>
+  <button class="close">×</button>
+  <img src="" alt="" />
+</div>
+
+<script>
+const carousel = document.querySelector('[data-carousel]');
+const track = carousel.querySelector('.track');
+const slides = [...carousel.querySelectorAll('.slide')];
+const prev = carousel.querySelector('.prev');
+const next = carousel.querySelector('.next');
+const counter = carousel.querySelector('[data-current]');
+const lightbox = document.querySelector('[data-lightbox]');
+const lightImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.close');
+
+let index = 0;
+
+function update() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  counter.textContent = index + 1;
+}
+
+next.onclick = () => {
+  index = (index + 1) % slides.length;
+  update();
+};
+
+prev.onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  update();
+};
+
+slides.forEach((slide, i) => {
+  slide.onclick = () => {
+    lightImg.src = slide.querySelector('img').src;
+    lightbox.classList.add('open'); 
+  };
+});
+
+closeBtn.onclick = () => lightbox.classList.remove('open');
+
+document.addEventListener('keydown', e => {
+  if (lightbox.hidden) {
+    if (e.key === 'ArrowRight') next.click();
+    if (e.key === 'ArrowLeft') prev.click();
+  } else {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  }
+});
+</script>
 
 <style>
 .carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1rem;
-  padding-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
 }
 
-.carousel img {
+.track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ⭐ Normierte Bilddarstellung */
+.slide img {
   width: 100%;
-  max-width: 600px;
+  height: 70vh;
+  max-height: 520px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 14px;
+}
+
+/* Desktop Pfeile */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.carousel:hover .nav {
+  opacity: 1;
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Bildzähler */
+.counter {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
   border-radius: 12px;
-  scroll-snap-align: start;
-  flex-shrink: 0;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 </style>

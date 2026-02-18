@@ -3,29 +3,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Carousel from "../components/Carousel.astro";
 import TripCard from "../components/TripCard.astro";
+import fs from "fs";
+
+function loadImages(folder) {
+  const base = `/public/unterwegs/${folder}`;
+  return fs.readdirSync("." + base)
+    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
+    .sort()
+    .map(f => `/unterwegs/${folder}/${f}`);
+}
 
 const latestTrip = {
   title: "Italien 2025 mit dem 911 Carrera S",
   text: "Herbst, Meran, Wein, Gardasee, Helloween.",
-  images: [
-    "/unterwegs/italien_2025/2025_Italien_1483.jpeg",
-    "/unterwegs/italien_2025/2025_Italien_1485.jpeg"
-    ]
-    };
+  images: loadImages("italien_2025")
+};
 
 const pastTrips = [
-  {
-    title: "Saalbach Silvester 2025",
-    image: "/unterwegs/saalbach_2025_2026/IMG_1762.jpeg",
-    href: "#"
-  },
-  {
-    title: "Ägypten 2025",
-    image: "/unterwegs/aegypten_2025/IMG_1228.jpeg",
-    href: "#"
-  }
-];
----
+   { title: "Saalbach Silvester 2025",
+   image: loadImages("saalbach_2025_2026")[0],
+   href: "#" }, 
+   
+   { title: "Ägypten 2025",
+   image: loadImages("aegypten_2025")[0],
+  
+   href: "#" } 
+   ]; 
+   ---
 
 <BaseLayout
   title="Unterwegs – Familie Pradl"
