@@ -24,52 +24,7 @@ const { images = [] } = Astro.props;
   <img src="" alt="" />
 </div>
 
-<script>
-const carousel = document.querySelector('[data-carousel]');
-const track = carousel.querySelector('.track');
-const slides = [...carousel.querySelectorAll('.slide')];
-const prev = carousel.querySelector('.prev');
-const next = carousel.querySelector('.next');
-const counter = carousel.querySelector('[data-current]');
-const lightbox = document.querySelector('[data-lightbox]');
-const lightImg = lightbox.querySelector('img');
-const closeBtn = lightbox.querySelector('.close');
-
-let index = 0;
-
-function update() {
-  track.style.transform = `translateX(-${index * 100}%)`;
-  counter.textContent = index + 1;
-}
-
-next.onclick = () => {
-  index = (index + 1) % slides.length;
-  update();
-};
-
-prev.onclick = () => {
-  index = (index - 1 + slides.length) % slides.length;
-  update();
-};
-
-slides.forEach((slide, i) => {
-  slide.onclick = () => {
-    lightImg.src = slide.querySelector('img').src;
-    lightbox.classList.add('open'); 
-  };
-});
-
-closeBtn.onclick = () => lightbox.classList.remove('open');
-
-document.addEventListener('keydown', e => {
-  if (lightbox.hidden) {
-    if (e.key === 'ArrowRight') next.click();
-    if (e.key === 'ArrowLeft') prev.click();
-  } else {
-    if (e.key === 'Escape') lightbox.classList.remove('open');
-  }
-});
-</script>
+<script src="/src/scripts/carousel.js"></script>
 
 <style>
 .carousel {
