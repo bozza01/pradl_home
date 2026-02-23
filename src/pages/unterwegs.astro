@@ -1,35 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import Carousel from "../components/Carousel.astro";
-import TripCard from "../components/TripCard.astro";
-import fs from "fs";
-
-function loadImages(folder) {
-  const base = `/public/unterwegs/${folder}`;
-  return fs.readdirSync("." + base)
-    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
-    .sort()
-    .map(f => `/unterwegs/${folder}/${f}`);
-}
-
-const latestTrip = {
-  title: "Italien 2025 mit dem 911 Carrera S",
-  text: "Herbst, Südtirol, Meran, Wein, Trentino,  Gardasee & Helloween.",
-  images: loadImages("italien_2025")
-};
-
-const pastTrips = [
-   { title: "Saalbach Silvester 2025",
-   image: loadImages("saalbach_2025_2026")[0],
-   href: "#" }, 
-   
-   { title: "Ägypten 2025",
-   image: loadImages("aegypten_2025")[0],
-  
-   href: "#" } 
-   ]; 
-   ---
+---
 
 <BaseLayout
   title="Unterwegs – Familie Pradl"
@@ -43,31 +15,68 @@ const pastTrips = [
 
 <section class="content">
 
-  <h1>{latestTrip.title}</h1>
-  <p>{latestTrip.text}</p>
+  <h1 data-trip-title></h1>
+  <p data-trip-text></p>
 
-  <Carousel images={latestTrip.images} />
+  <div class="carousel" data-carousel>
+    <div class="track"></div>
+
+    <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+    <button class="nav next" aria-label="Nächstes Bild">›</button>
+
+    <div class="counter">
+      <span data-current>1</span> / <span data-total></span>
+    </div>
+  </div>
 
   <h2>Weitere Reisen</h2>
 
-  <div class="grid">
-    {pastTrips.map(trip => (
-      <TripCard {...trip} />
-    ))}
-  </div>
+  <section class="trip-grid" data-trip-grid></section>
 
 </section>
 
+<script src="/scripts/trips.js" defer></script>
+
 <style>
-.grid {
+.trip-grid {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
-@media(min-width:700px){
-  .grid {
-    grid-template-columns: repeat(2,1fr);
+.trip-card {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: transform .2s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+}
+
+.trip-card.active {
+  outline: 2px solid #222;
+  border-radius: 12px;
+}
+
+.trip-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.trip-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+  .trip-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

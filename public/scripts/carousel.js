@@ -25,3 +25,30 @@ document.addEventListener("DOMContentLoaded", () => {
     update();
   });
 });
+
+// LIGHTBOX
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.close');
+
+document.querySelectorAll('.slide img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+closeBtn.onclick = closeLightbox;
+lightbox.onclick = e => {
+  if (e.target === lightbox) closeLightbox();
+};
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
