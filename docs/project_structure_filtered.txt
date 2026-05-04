@@ -1,0 +1,85 @@
+--- Folder Structure ---
+[.astro]
+    ├── [collections]
+    ├── content-assets.mjs
+    ├── content-modules.mjs
+    ├── data-store.json
+    ├── settings.json
+    └── types.d.ts
+package-lock.json
+package.json
+[public]
+    ├── android-chrome-192x192.png
+    ├── android-chrome-512x512.png
+    ├── [data]
+        └── trips.json
+    ├── favicon-16x16.png
+    ├── favicon-32x32.png
+    ├── favicon.ico
+    ├── favicon.svg
+    ├── hero.png
+    ├── [scripts]
+        ├── carousel.js
+        └── trips.js
+    ├── site.webmanifest
+    └── [unterwegs]
+        ├── [aegypten_2025]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            └── 06.jpg
+        ├── [italien_2025]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            ├── 06.jpg
+            ├── 07.jpg
+            ├── 08.jpg
+            ├── 09.jpg
+            ├── 10.jpg
+            ├── 11.jpg
+            ├── 12.jpg
+            ├── 13.jpg
+            ├── 14.jpg
+            ├── 15.jpg
+            ├── 16.jpg
+            ├── 17.jpg
+            ├── 18.jpg
+            ├── 19.jpg
+            ├── 20.jpg
+            ├── 21.jpg
+            ├── 22.jpg
+            └── 23.jpg
+        └── [saalbach_2025_2026]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            ├── 06.jpg
+            ├── 07.jpg
+            ├── 08.jpg
+            ├── 09.jpg
+            ├── 10.jpg
+            ├── 11.jpg
+            └── 12.jpg
+[src]
+    ├── [components]
+        ├── Breadcrumbs.astro
+        ├── Carousel.astro
+        └── TripCard.astro
+    ├── [layouts]
+        └── BaseLayout.astro
+    ├── [pages]
+        ├── index.astro
+        └── unterwegs.astro
+    └── [styles]
+        └── global.css
+tsconfig.json
+vercel.json
+
+--- File Contents ---

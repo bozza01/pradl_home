@@ -1,0 +1,10 @@
+node_modules
+dist
+docs
+.git
+.vscode
+*.log
+Notizen.rtf
+README.md
+apple-touch-icon.png
+astro.config.mjs

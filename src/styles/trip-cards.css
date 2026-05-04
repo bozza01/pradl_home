@@ -1,0 +1,35 @@
+.trip-card {
+  display: block;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  padding: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.trip-card img {
+  width: 100%;
+  height: 140px;      /* deutlich kleiner als Carousel */
+  object-fit: cover;
+  display: block;
+}
+
+.trip-card span {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.trip-card.active {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}

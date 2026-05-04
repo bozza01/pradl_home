@@ -1,0 +1,1082 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+docs/
+  .project_structure_filter
+  .project_structure_ignore
+  project_structure_filtered.txt
+public/
+  data/
+    trips.json
+  scripts/
+    carousel.js
+    trips.js
+  unterwegs/
+    aegypten_2025/
+      01.jpg
+      02.jpg
+      03.jpg
+      04.jpg
+      05.jpg
+      06.jpg
+    italien_2025/
+      01.jpg
+      02.jpg
+      03.jpg
+      04.jpg
+      05.jpg
+      06.jpg
+      07.jpg
+      08.jpg
+      09.jpg
+      10.jpg
+      11.jpg
+      12.jpg
+      13.jpg
+      14.jpg
+      15.jpg
+      16.jpg
+      17.jpg
+      18.jpg
+      19.jpg
+      20.jpg
+      21.jpg
+      22.jpg
+      23.jpg
+    saalbach_2025_2026/
+      01.jpg
+      02.jpg
+      03.jpg
+      04.jpg
+      05.jpg
+      06.jpg
+      07.jpg
+      08.jpg
+      09.jpg
+      10.jpg
+      11.jpg
+      12.jpg
+  android-chrome-192x192.png
+  android-chrome-512x512.png
+  apple-touch-icon.png
+  favicon-16x16.png
+  favicon-32x32.png
+  favicon.ico
+  favicon.svg
+  hero.png
+  site.webmanifest
+src/
+  components/
+    Breadcrumbs.astro
+    Carousel.astro
+    TripCard.astro
+  layouts/
+    BaseLayout.astro
+  pages/
+    index.astro
+    unterwegs.astro
+  styles/
+    global.css
+.gitignore
+apple-touch-icon.png
+astro.config.mjs
+Notizen.rtf
+package.json
+README.md
+tsconfig.json
+vercel.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="docs/.project_structure_filter">
+
+</file>
+
+<file path="docs/.project_structure_ignore">
+node_modules
+dist
+docs
+.git
+.vscode
+*.log
+Notizen.rtf
+README.md
+apple-touch-icon.png
+astro.config.mjs
+</file>
+
+<file path="docs/project_structure_filtered.txt">
+--- Folder Structure ---
+[.astro]
+    ├── [collections]
+    ├── content-assets.mjs
+    ├── content-modules.mjs
+    ├── data-store.json
+    ├── settings.json
+    └── types.d.ts
+package-lock.json
+package.json
+[public]
+    ├── android-chrome-192x192.png
+    ├── android-chrome-512x512.png
+    ├── [data]
+        └── trips.json
+    ├── favicon-16x16.png
+    ├── favicon-32x32.png
+    ├── favicon.ico
+    ├── favicon.svg
+    ├── hero.png
+    ├── [scripts]
+        ├── carousel.js
+        └── trips.js
+    ├── site.webmanifest
+    └── [unterwegs]
+        ├── [aegypten_2025]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            └── 06.jpg
+        ├── [italien_2025]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            ├── 06.jpg
+            ├── 07.jpg
+            ├── 08.jpg
+            ├── 09.jpg
+            ├── 10.jpg
+            ├── 11.jpg
+            ├── 12.jpg
+            ├── 13.jpg
+            ├── 14.jpg
+            ├── 15.jpg
+            ├── 16.jpg
+            ├── 17.jpg
+            ├── 18.jpg
+            ├── 19.jpg
+            ├── 20.jpg
+            ├── 21.jpg
+            ├── 22.jpg
+            └── 23.jpg
+        └── [saalbach_2025_2026]
+            ├── 01.jpg
+            ├── 02.jpg
+            ├── 03.jpg
+            ├── 04.jpg
+            ├── 05.jpg
+            ├── 06.jpg
+            ├── 07.jpg
+            ├── 08.jpg
+            ├── 09.jpg
+            ├── 10.jpg
+            ├── 11.jpg
+            └── 12.jpg
+[src]
+    ├── [components]
+        ├── Breadcrumbs.astro
+        ├── Carousel.astro
+        └── TripCard.astro
+    ├── [layouts]
+        └── BaseLayout.astro
+    ├── [pages]
+        ├── index.astro
+        └── unterwegs.astro
+    └── [styles]
+        └── global.css
+tsconfig.json
+vercel.json
+
+--- File Contents ---
+</file>
+
+<file path="public/data/trips.json">
+[
+  {
+    "title": "Italien 2025 mit dem 911 Carrera S",
+    "slug": "italien_2025",
+    "cover": "/unterwegs/italien_2025/01.jpg",
+    "text": "Herbst, Südtirol, Meran, Wein, Trentino, Gardasee & Helloween",
+    "images": [
+      "/unterwegs/italien_2025/02.jpg",
+      "/unterwegs/italien_2025/03.jpg",
+      "/unterwegs/italien_2025/04.jpg"
+    ]
+  },
+  {
+    "title": "Ägypten 2025",
+    "slug": "aegypten_2025",
+    "cover": "/unterwegs/aegypten_2025/01.jpg",
+    "text": "Sonne, Wüste und beeindruckende Unterwasserwelt im Roten Meer.",
+    "images": [
+      "/unterwegs/aegypten_2025/02.jpg",
+      "/unterwegs/aegypten_2025/03.jpg",
+      "/unterwegs/aegypten_2025/04.jpg"
+    ]
+  },
+  {
+    "title": "Saalbach Silvester 2025",
+    "slug": "saalbach_2025_2026",
+    "cover": "/unterwegs/saalbach_2025_2026/01.jpg",
+    "text": "Berge, Schnee & Sylvester",
+    "images": [
+      "/unterwegs/saalbach_2025_2026/02.jpg",
+      "/unterwegs/saalbach_2025_2026/03.jpg"
+    ]
+  }
+]
+</file>
+
+<file path="public/scripts/trips.js">
+document.addEventListener("DOMContentLoaded", async () => {
+
+  const response = await fetch("/data/trips.json");
+  const trips = await response.json();
+
+  const titleEl = document.querySelector("[data-trip-title]");
+  const textEl = document.querySelector("[data-trip-text]");
+  const carousel = document.querySelector('[data-carousel]');
+  const track = carousel.querySelector('.track');
+  const grid = document.querySelector("[data-trip-grid]");
+  const counterCurrent = document.querySelector("[data-current]");
+  const counterTotal = document.querySelector("[data-total]");
+
+  let index = 0;
+  let currentTrip = trips[0];
+
+  function renderCarousel(images) {
+    track.innerHTML = images.map(src => `
+      <div class="slide">
+        <img src="${src}" loading="lazy" />
+      </div>
+    `).join("");
+
+    counterTotal.textContent = images.length;
+    index = 0;
+    updateSlide();
+  }
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    counterCurrent.textContent = index + 1;
+  }
+
+  function loadTrip(trip) {
+    currentTrip = trip;
+    titleEl.textContent = trip.title;
+    textEl.textContent = trip.text;
+    renderCarousel(trip.images);
+
+    document.querySelectorAll(".trip-card").forEach(card =>
+      card.classList.toggle("active", card.dataset.slug === trip.slug)
+    );
+
+    document.querySelector("[data-carousel]")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Navigation
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % currentTrip.images.length;
+    updateSlide();
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + currentTrip.images.length) % currentTrip.images.length;
+    updateSlide();
+  };
+
+  // Grid erstellen
+  trips.forEach(trip => {
+    const card = document.createElement("button");
+    card.className = "trip-card";
+    card.dataset.slug = trip.slug;
+
+    card.innerHTML = `
+      <img src="${trip.cover}" alt="">
+      <span>${trip.title}</span>
+    `;
+
+    card.onclick = () => loadTrip(trip);
+
+    grid.appendChild(card);
+  });
+
+  // Initial: erster Trip
+  loadTrip(trips[0]);
+
+});
+</file>
+
+<file path="public/site.webmanifest">
+{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+</file>
+
+<file path="src/components/Breadcrumbs.astro">
+---
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumbs">
+    {items.map((item, i) => (
+      <li>
+        {i < items.length - 1 ? (
+          <a href={item.href}>{item.label}</a>
+        ) : (
+          <span aria-current="page">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+.breadcrumbs {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  padding: 1rem;
+  font-size: .9rem;
+}
+
+.breadcrumbs li::after {
+  content: "›";
+  margin-left: .5rem;
+}
+
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #555;
+}
+</style>
+</file>
+
+<file path="src/components/TripCard.astro">
+---
+const { title, image, href } = Astro.props;
+---
+
+<a class="card" href={href}>
+  <img src={image} alt={title} />
+  <span>{title}</span>
+</a>
+
+<style>
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: .5rem;
+}
+
+.card span {
+  font-weight: 500;
+}
+</style>
+</file>
+
+<file path="src/layouts/BaseLayout.astro">
+---
+import "../styles/global.css";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body>
+    <a href="#content" class="skip-link">Zum Inhalt springen</a>
+
+    <main id="content">
+      <slot />
+    </main>
+
+    <footer>
+      © {new Date().getFullYear()} Boris Pradl
+    </footer>
+
+    <script src="/scripts/carousel.js" defer></script>
+
+  </body>
+</html>
+</file>
+
+<file path="src/styles/global.css">
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 20px;
+  top: 20px;
+  background: white;
+  padding: 10px;
+}
+
+.content {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: #444;
+  font-size: 0.9rem;
+}
+</file>
+
+<file path=".gitignore">
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+</file>
+
+<file path="astro.config.mjs">
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({});
+</file>
+
+<file path="package.json">
+{
+  "name": "pradl_home",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  }
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
+}
+</file>
+
+<file path="vercel.json">
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; img-src 'self' data: https:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+        }
+      ]
+    }
+  ]
+}
+</file>
+
+<file path="public/scripts/carousel.js">
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.track');
+    const slides = [...carousel.querySelectorAll('.slide')];
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    const counter = carousel.querySelector('[data-current]');
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      counter.textContent = index + 1;
+    }
+
+    next?.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      update();
+    });
+
+    prev?.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    });
+
+    update();
+  });
+});
+
+// LIGHTBOX
+// LIGHTBOX (robust & crash-sicher)
+const lightbox = document.querySelector('[data-lightbox]');
+
+if (lightbox) {
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = lightbox.querySelector('.close');
+
+  document.addEventListener('click', e => {
+    if (e.target.matches('.slide img')) {
+      lightboxImg.src = e.target.src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+</file>
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#222"/>
+  <path d="M38 72V28h22c12 0 20 8 20 18s-8 18-20 18H38"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+</file>
+
+<file path="README.md">
+# Astro Starter Kit: Minimal
+
+```sh
+npm create astro@latest -- --template minimal
+```
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+>>>>>>> e8431cf (Initial commit from Astro)
+</file>
+
+<file path="src/pages/unterwegs.astro">
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+---
+
+<BaseLayout
+  title="Unterwegs – Familie Pradl"
+  description="Reisen & Eindrücke der Familie Pradl"
+>
+
+<Breadcrumbs items={[
+  { label: "Start", href: "/" },
+  { label: "Unterwegs" }
+]} />
+
+<section class="content">
+
+  <h1 data-trip-title></h1>
+  <p data-trip-text></p>
+
+  <div class="carousel" data-carousel>
+    <div class="track"></div>
+
+    <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+    <button class="nav next" aria-label="Nächstes Bild">›</button>
+
+    <div class="counter">
+      <span data-current>1</span> / <span data-total></span>
+    </div>
+  </div>
+
+  <h2>Weitere Reisen</h2>
+
+  <section class="trip-grid" data-trip-grid></section>
+
+</section>
+
+<script src="/scripts/trips.js" defer></script>
+
+<style>
+.trip-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.trip-card {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: transform .2s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+}
+
+.trip-card.active {
+  outline: 2px solid #222;
+  border-radius: 12px;
+}
+
+.trip-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.trip-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+  .trip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+
+</BaseLayout>
+</file>
+
+<file path="src/components/Carousel.astro">
+---
+const { images = [] } = Astro.props;
+---
+
+<div class="carousel" data-carousel>
+  <div class="track">
+    {images.map((src, i) => (
+      <div class="slide">
+        <img src={src} alt={`Bild ${i + 1}`} loading="lazy" />
+      </div>
+    ))}
+  </div>
+
+  <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+  <button class="nav next" aria-label="Nächstes Bild">›</button>
+
+  <div class="counter">
+    <span data-current>1</span> / {images.length}
+  </div>
+</div>
+
+<div class="lightbox" data-lightbox>
+  <button class="close">×</button>
+  <img src="" alt="" />
+</div>
+
+<style is:global>
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+/* feste Höhe verhindert Layout-Sprünge */
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(280px, 60vh, 520px);
+}
+
+/* Bild skaliert innerhalb der Fläche */
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  cursor: zoom-in;
+  transition: transform .2s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.02);
+}
+
+.track {
+  display: flex;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+/* Desktop Pfeile */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.carousel:hover .nav {
+  opacity: 1;
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Bildzähler */
+.counter {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</file>
+
+<file path="src/pages/index.astro">
+---
+const title = "Pradl – Offizielle Website";
+const description = "Willkommen auf der Website der Familie Pradl.";
+---
+
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body>
+    <a href="#content" class="skip-link">Zum Inhalt springen</a>
+
+    <main id="content">
+      <header class="hero">
+        <div class="overlay">
+          <h1>Willkommen</h1>
+          <p>Ein kleiner digitaler Ort über Familie, Interessen und Projekte.</p>
+        </div>
+      </header>
+
+      <section class="content">
+        <p>
+          Diese Seite wächst Schritt für Schritt.  
+          Hier sammeln wir Eindrücke aus unserem Alltag, Reisen, Technikprojekten
+          und den kleinen Dingen, die uns begeistern.
+        </p>
+
+        <div class="preview">
+          <div>
+            <h2>
+              <a href="/unterwegs">🌍 Unterwegs</a>
+            </h2>
+            <p>Orte, die uns inspirieren.</p>
+          </div>
+          <div>
+            <h2>🛠 Projekte</h2>
+            <p>Technik, Ideen und Experimente.</p>
+          </div>
+          <div>
+            <h2>👨‍👩‍👧 Familie</h2>
+            <p>Traditionen und gemeinsame Interessen.</p>
+          </div>
+        </div>
+
+        <p class="soon">Mehr Inhalte folgen in Kürze.</p>
+      </section>
+
+      <footer>
+        © {new Date().getFullYear()} Boris Pradl
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  .hero {
+    height: 80vh;
+    background-image: url("/hero.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    background: rgba(0,0,0,0.45);
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  h1 {
+    margin: 0 0 0.5rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+ .skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+  .skip-link:focus {
+    left: 20px;
+    top: 20px;
+    background: white;
+    padding: 10px;
+  } 
+
+  .overlay p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .preview {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .preview h2 {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .soon {
+    margin-top: 3rem;
+    font-style: italic;
+    color: #666;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    color: #444;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 700px) {
+    .preview {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+:focus-visible {
+  outline: 3px solid #666;
+  outline-offset: 3px;
+}  
+</style>
+</file>
+
+</files>

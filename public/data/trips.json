@@ -2,33 +2,22 @@
   {
     "title": "Italien 2025 mit dem 911 Carrera S",
     "slug": "italien_2025",
+    "folder": "italien_2025",
     "cover": "/unterwegs/italien_2025/01.jpg",
-    "text": "Herbst, Südtirol, Meran, Wein, Trentino, Gardasee & Helloween",
-    "images": [
-      "/unterwegs/italien_2025/02.jpg",
-      "/unterwegs/italien_2025/03.jpg",
-      "/unterwegs/italien_2025/04.jpg"
-    ]
+    "text": "Herbst, Südtirol, Meran, Wein, Trentino, Gardasee & Helloween"
   },
   {
     "title": "Ägypten 2025",
     "slug": "aegypten_2025",
+    "folder": "aegypten_2025",
     "cover": "/unterwegs/aegypten_2025/01.jpg",
-    "text": "Sonne, Wüste und beeindruckende Unterwasserwelt im Roten Meer.",
-    "images": [
-      "/unterwegs/aegypten_2025/02.jpg",
-      "/unterwegs/aegypten_2025/03.jpg",
-      "/unterwegs/aegypten_2025/04.jpg"
-    ]
+    "text": "Sonne, Wüste und beeindruckende Unterwasserwelt im Roten Meer."
   },
   {
     "title": "Saalbach Silvester 2025",
     "slug": "saalbach_2025_2026",
+    "folder": "saalbach_2025_2026",
     "cover": "/unterwegs/saalbach_2025_2026/01.jpg",
-    "text": "Berge, Schnee & Sylvester",
-    "images": [
-      "/unterwegs/saalbach_2025_2026/02.jpg",
-      "/unterwegs/saalbach_2025_2026/03.jpg"
-    ]
+    "text": "Berge, Schnee & Sylvester"
   }
 ]

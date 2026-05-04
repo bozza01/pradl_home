@@ -27,28 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // LIGHTBOX
+// LIGHTBOX (robust & crash-sicher)
 const lightbox = document.querySelector('[data-lightbox]');
-const lightboxImg = lightbox.querySelector('img');
-const closeBtn = lightbox.querySelector('.close');
 
-document.querySelectorAll('.slide img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+if (lightbox) {
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = lightbox.querySelector('.close');
+
+  document.addEventListener('click', e => {
+    if (e.target.matches('.slide img')) {
+      lightboxImg.src = e.target.src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
   });
-});
 
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 }
-
-closeBtn.onclick = closeLightbox;
-lightbox.onclick = e => {
-  if (e.target === lightbox) closeLightbox();
-};
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
-});

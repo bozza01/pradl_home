@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async () => {
+  document.addEventListener("DOMContentLoaded", async () => {
 
   const response = await fetch("/data/trips.json");
   const trips = await response.json();
@@ -14,36 +14,54 @@ document.addEventListener("DOMContentLoaded", async () => {
   let index = 0;
   let currentTrip = trips[0];
 
-  function renderCarousel(images) {
-    track.innerHTML = images.map(src => `
-      <div class="slide">
-        <img src="${src}" loading="lazy" />
-      </div>
-    `).join("");
+function getImages(folder) {
+  const maxImages = 50;
+  const images = [];
 
-    counterTotal.textContent = images.length;
-    index = 0;
-    updateSlide();
+  for (let i = 1; i <= maxImages; i++) {
+    const num = String(i).padStart(2, "0");
+    images.push(`/unterwegs/${folder}/${num}.jpg`);
   }
+
+  return images;
+}
+
+function renderCarousel(images) {
+  const track = document.querySelector(".track");
+
+  track.innerHTML = images.map(src => `
+    <div class="slide">
+      <img src="${src}" loading="lazy" />
+    </div>
+  `).join("");
+
+  index = 0;
+  updateSlide();
+}
 
   function updateSlide() {
     track.style.transform = `translateX(-${index * 100}%)`;
     counterCurrent.textContent = index + 1;
   }
 
-  function loadTrip(trip) {
-    currentTrip = trip;
-    titleEl.textContent = trip.title;
-    textEl.textContent = trip.text;
-    renderCarousel(trip.images);
+function loadTrip(trip) {
+  currentTrip = trip;
 
-    document.querySelectorAll(".trip-card").forEach(card =>
-      card.classList.toggle("active", card.dataset.slug === trip.slug)
-    );
+  titleEl.textContent = trip.title;
+  textEl.textContent = trip.text;
 
-    document.querySelector("[data-carousel]")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  const images = getImages(trip.folder);
+  renderCarousel(images);
+  currentTrip.images = images;
+  counterTotal.textContent = images.length;
+
+  document.querySelectorAll(".trip-card").forEach(card =>
+    card.classList.toggle("active", card.dataset.slug === trip.slug)
+  );
+
+  document.querySelector("[data-carousel]")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
   // Navigation
   document.querySelector(".next").onclick = () => {

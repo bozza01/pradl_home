@@ -1,3 +1,8 @@
+/* === Component Styles === */
+@import "./carousel.css";
+@import "./trip-cards.css";
+
+/* === Base Styles === */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
@@ -30,4 +35,24 @@ footer {
   padding: 2rem 0 3rem;
   color: #444;
   font-size: 0.9rem;
+}
+
+/* === TripStyles === */
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .trip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .trip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
